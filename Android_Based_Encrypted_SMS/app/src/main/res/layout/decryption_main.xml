@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".ComposeActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="0.5"
+                android:text="From" />
+
+            <Spinner
+                android:id="@+id/from"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="2.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintBottom_toTopOf="@+id/Swtich"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="0.5"
+                android:text="To" />
+
+            <EditText
+                android:id="@+id/to"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="2.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintTop_toTopOf="@+id/Swtich"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="0.5"
+                android:text="Subject" />
+
+            <EditText
+                android:id="@+id/subject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="2.5"
+                android:hint="subject" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintTop_toTopOf="@+id/Swtich"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="0.5"
+                android:text="Compose" />
+
+            <EditText
+                android:id="@+id/compose"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="2.5"
+                android:hint="Compose" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Swtich"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/buttonshape"
+        android:onClick="encryptionButtonClick"
+        android:text="@string/advanced_encryption_standard"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Key">
+
+        <Button
+            android:id="@+id/Encrypt_Buuton"
+            android:layout_width="111dp"
+            android:layout_height="60dp"
+            android:background="@drawable/buttonshape"
+            android:onClick="encryptionButtonClick"
+            android:text="@string/encrypt"
+            android:textSize="19sp"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/Decrypt_Buuton"
+            android:layout_width="111dp"
+            android:layout_height="60dp"
+            android:background="@drawable/buttonshape"
+            android:onClick="encryptionButtonClick"
+            android:text="@string/decrypt"
+            android:textSize="19sp"
+            android:layout_marginLeft="10dp"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/TextArea"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape"
+        android:gravity="center"
+        android:hint="@string/enter_your_message_here"
+        android:inputType="textMultiLine"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Swtich" />
+
+    <EditText
+        android:id="@+id/Key"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape"
+        android:gravity="center"
+        android:hint="@string/key"
+        android:maxLength="30"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextArea" />
+
+    <TextView
+        android:id="@+id/Answer"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shape"
+        android:gravity="center"
+        android:hint="@string/your_output_gonna_be_here"
+        android:inputType="textMultiLine"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="TextViewEdits" />
+
+    <TextView
+        android:id="@+id/Matrix"
+        android:layout_width="217dp"
+        android:layout_height="108dp"
+        android:layout_marginBottom="158dp"
+        android:background="@drawable/shape"
+        android:gravity="center"
+        android:hint="@string/your_matrix_key_gonna_be_here"
+        android:inputType="textMultiLine"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="TextViewEdits" />
+
+    <TextView
+        android:id="@+id/Play_Fair_VALUE"
+        android:layout_width="300dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="98dp"
+        android:background="@drawable/shape"
+        android:gravity="center"
+        android:hint="@string/your_output_gonna_be_here"
+        android:inputType="textMultiLine"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Matrix"
+        tools:ignore="TextViewEdits" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Answer">
+
+        <Button
+            android:id="@+id/copy_button"
+            android:layout_width="111dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/buttonshape"
+            android:onClick="encryptionButtonClick"
+            android:text="@string/copy"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/reset_button"
+            android:layout_width="111dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/buttonshape"
+            android:onClick="encryptionButtonClick"
+            android:text="@string/reset"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Send"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="250dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:shadowRadius="@integer/material_motion_duration_long_1"
+        android:textAllCaps="false"
+        android:textColor="@color/whiteCardColor"
+        android:background="#348FD8"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

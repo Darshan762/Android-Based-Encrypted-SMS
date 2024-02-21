@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Compose"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+            <ImageView
+                android:id="@+id/send"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:foregroundGravity="right"
+                android:onClick="send"
+                android:src="@drawable/ic_baseline_send_24"/>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" >
+        <TextView
+            android:layout_weight="0.5"
+            android:layout_margin="8dp"
+            android:text="From"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <Spinner
+            android:id="@+id/from"
+            android:layout_weight="2.5"
+            android:layout_margin="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" >
+        <TextView
+            android:layout_weight="0.5"
+            android:layout_margin="8dp"
+            android:text="To"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/to"
+            android:layout_weight="2.5"
+            android:layout_margin="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" >
+        <TextView
+            android:layout_weight="0.5"
+            android:layout_margin="8dp"
+            android:text="Subject"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:hint="subject"
+            android:id="@+id/subject"
+            android:layout_weight="2.5"
+            android:layout_margin="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+        <LinearLayout
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints" >
+            <TextView
+                android:layout_weight="0.5"
+                android:layout_margin="8dp"
+                android:text="Key"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:hint="subject"
+                android:id="@+id/key"
+                android:layout_weight="2.5"
+                android:layout_margin="8dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints" >
+            <Button
+                android:id="@+id/Swtich"
+                android:layout_width="300dp"
+                android:layout_height="90dp"
+                android:background="@drawable/border"
+                android:onClick="encryptionButtonClick"
+                android:text="Advanced Encryption Standard"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/Answer"
+            android:layout_width="300dp"
+            android:layout_height="160dp"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:hint="your_output_gonna_be_here"
+            android:inputType="textMultiLine"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            tools:ignore="TextViewEdits" />
+        <View
+            android:background="#AAA7A7"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+    <EditText
+        android:hint="Compose Mail"
+        android:maxLines="20"
+        android:layout_margin="8dp"
+        android:id="@+id/data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Key">
+
+            <Button
+                android:id="@+id/Encrypt_Buuton"
+                android:layout_width="111dp"
+                android:layout_height="60dp"
+                android:background="@drawable/border"
+                android:onClick="encrypt"
+                android:text="encrypt"
+                android:textSize="19sp"
+                android:layout_marginRight="10dp"/>
+
+            <Button
+                android:id="@+id/Decrypt_Buuton"
+                android:layout_width="111dp"
+                android:layout_height="60dp"
+                android:background="@drawable/border"
+                android:onClick="encryptionButtonClick"
+                android:text="decrypt"
+                android:textSize="19sp"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
